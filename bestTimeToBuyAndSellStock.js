@@ -18,3 +18,25 @@ var maxProfit = function(prices) {
 }
 
 maxProfit(prices);
+
+// OR
+
+var maxProfit = function(prices) {
+  var left = 0;
+  var right = 1;
+  var maxDiff = 0;
+
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      let diff = prices[right] - prices[left];
+      maxDiff = Math.max(maxDiff, diff);
+    } else {
+      left = right;
+    }
+    right++;
+  }
+  console.log(maxDiff);
+  return maxDiff;
+}
+
+maxProfit(prices);
