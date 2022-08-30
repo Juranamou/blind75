@@ -12,6 +12,7 @@ var findMin = function(nums) {
       res = Math.min(res, nums[left]);
       break;
     }
+    // have to check if the midPoint is the minimum value
     midPoint = (Math.floor((left + right)/2));
     res = Math.min(res, nums[midPoint]);
     // part of the sorted array that has been rotated
