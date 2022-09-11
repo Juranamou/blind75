@@ -6,11 +6,13 @@ var wordBreak = function(s, wordDict) {
             if (s.slice(i,i + wordDict[w].length) === wordDict[w]) {
                 dp[i] = dp[i + wordDict[w].length]
             }
+            if (dp[i]) {
+                break;
+            }
         }
     }
     console.log(dp[0]);
     return dp[0];
-
 };
 
-wordBreak('neetcode',['neet', 'code']);
+wordBreak('abcd',["a","abc","b","cd"]);
